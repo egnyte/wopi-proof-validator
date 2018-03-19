@@ -1,8 +1,11 @@
 # wopi-proof-validator
 A library for validating WOPI Proof Keys coming from Microsoft Office in Node.js
 
+Extracted from Egnyte's integration with Office Online.
+
 Implemented according to https://wopi.readthedocs.io/en/latest/scenarios/proofkeys.html#proof-keys
-as of 2016/02
+
+Last change to logic: 2016/02, continues to work 2018/03
 
 
 ## Usage
@@ -32,8 +35,14 @@ const isValid = wopiValidator.check(
 
 ### Debug
 
-To debug the implementation set the env variable `DEBUG=wopiproof` and get logs.
+To debug the implementation set the env variable `DEBUG=wopiproof` and see output.
+
+### Tests
+
+Run `npm test` to trigger basic smoke tests
 
 ## Contributing
 
-Looking forward to accepting pull requests with test improvements
+Contributions welcome.
+
+Looking forward to accepting pull requests with test improvements.
