@@ -1,0 +1,23 @@
+{
+  "name": "wopi-proof-validator",
+  "version": "1.0.0",
+  "description": "A library for validating WOPI Proof Keys coming from Microsoft Office in Node.js",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "DEBUG=wopiproof node test/smoke.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/egnyte/wopi-proof-validator.git"
+  },
+  "keywords": [],
+  "author": "Egnyte Inc.",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/egnyte/wopi-proof-validator/issues"
+  },
+  "homepage": "https://github.com/egnyte/wopi-proof-validator#readme",
+  "dependencies": {
+      "bignum": "0.11.0"
+  }
+}
