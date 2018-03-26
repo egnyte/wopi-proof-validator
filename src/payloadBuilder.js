@@ -4,8 +4,8 @@ module.exports = {
     build: function(input) {
         const fullUrl = percentEncode(input.url).toUpperCase(); //not sure about the escaping yet.
 
-        const fullUrlBuffer = new Buffer(fullUrl, "utf8");
-        const accessTokenBuffer = new Buffer(input.accessToken, "utf8");
+        const fullUrlBuffer = Buffer.from(fullUrl, "utf8");
+        const accessTokenBuffer = Buffer.from(input.accessToken, "utf8");
 
         const timeBuffer = bignum(input.timestamp).toBuffer({
             endian: "big",
@@ -26,7 +26,7 @@ module.exports = {
 };
 
 function getLengthIn4Bytes(buff) {
-    const lengthBuffer = new Buffer(4);
+    const lengthBuffer = Buffer.alloc(4);
     lengthBuffer.writeUIntBE(buff.length, 0, 4);
     return lengthBuffer;
 }

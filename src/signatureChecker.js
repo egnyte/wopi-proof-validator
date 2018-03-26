@@ -55,7 +55,7 @@ function convertKey(keyRaw) {
 }
 
 function convertBase64ToBuffer(proof) {
-    return new Buffer(proof, "base64");
+    return Buffer.from(proof, "base64");
 }
 
 function createLazyConverterMap(values, conversions) {
