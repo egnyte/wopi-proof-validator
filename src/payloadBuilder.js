@@ -1,4 +1,4 @@
-const bignum = require("bignum");
+const { Int64BE } = require('int64-buffer')
 
 module.exports = {
     build: function(input) {
@@ -6,11 +6,7 @@ module.exports = {
 
         const fullUrlBuffer = Buffer.from(fullUrl, "utf8");
         const accessTokenBuffer = Buffer.from(input.accessToken, "utf8");
-
-        const timeBuffer = bignum(input.timestamp).toBuffer({
-            endian: "big",
-            size: 8
-        });
+        const timeBuffer = new Int64BE(input.timestamp).toBuffer()
 
         const expectedProofBuffer = Buffer.concat([
             getLengthIn4Bytes(accessTokenBuffer),
